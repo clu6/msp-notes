@@ -1,15 +1,42 @@
 :root {
-  --vp-c-brand: #646cff;
-  --vp-c-brand-light: #747bff;
-  --vp-home-hero-name-color: #000;
-  --vp-home-hero-name-background: transparent;
-  --vp-home-hero-text-color: #000;
+  /* Light theme colors */
+  --vp-c-brand: #3468C0;
+  --vp-c-brand-light: #4A7BD3;
+  --vp-home-hero-name-color: #213547;
+  --vp-home-hero-text-color: #213547;
   --vp-home-hero-tagline-color: #666;
+  --vp-c-bg: #ffffff;
+  --vp-c-text: #213547;
+  --vp-c-text-1: #213547;
+  --vp-c-text-2: #666666;
+  --vp-c-divider: rgba(60, 60, 60, 0.12);
+}
+
+html:not(.dark) {
+  --vp-home-hero-name-color: #213547;
+  --vp-home-hero-text-color: #213547;
+  --vp-home-hero-tagline-color: #666;
+  --vp-c-bg: #ffffff;
+  --vp-c-text: #213547;
+  --vp-c-text-1: #213547;
+  --vp-c-text-2: #666666;
+  --vp-c-divider: rgba(60, 60, 60, 0.12);
+}
+
+html.dark {
+  --vp-home-hero-name-color: #fff;
+  --vp-home-hero-text-color: #fff;
+  --vp-home-hero-tagline-color: #aaa;
+  --vp-c-bg: #1a1a1a;
+  --vp-c-text: #ffffff;
+  --vp-c-text-1: #ffffff;
+  --vp-c-text-2: #aaaaaa;
+  --vp-c-divider: rgba(255, 255, 255, 0.1);
 }
 
 .VPHome {
   padding: 24px;
-  background: #f8f9fc;
+  background: var(--vp-c-bg);
 }
 
 .container {
@@ -39,14 +66,14 @@
 .VPHero .text {
   font-size: 36px !important;
   font-weight: 500;
-  color: #000;
+  color: var(--vp-c-text);
   margin: 0;
 }
 
 .VPHero .tagline {
   font-size: 18px !important;
   font-weight: 500;
-  color: #666;
+  color: var(--vp-c-text-2);
   margin-top: 12px;
 }
 
@@ -62,15 +89,25 @@
 }
 
 .VPFeatures .item {
-  background: #fff;
+  background: var(--vp-c-bg);
   border-radius: 12px;
   padding: 24px;
   transition: all 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--vp-c-divider);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .VPFeatures .item:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.VPNav {
+  background: var(--vp-c-bg);
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.VPSidebar {
+  background: var(--vp-c-bg);
+  border-right: 1px solid var(--vp-c-divider);
 }

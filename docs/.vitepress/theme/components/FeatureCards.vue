@@ -9,26 +9,34 @@
 </template>
 
 <script setup>
+import { useData } from 'vitepress'
+const { isDark } = useData()
+
 const features = [
   {
     icon: '🌐',
-    title: 'Cross Platform',
-    details: 'Support for Windows, Linux, macOS, Android, iOS',
-    background: 'linear-gradient(to right bottom, #e8f5fe, #e8f0ff)'
+    title: 'Universal Access',
+    details: 'Access any application remotely, including official apps, store apps, and custom developed applications',
+    background: isDark.value 
+      ? 'linear-gradient(145deg, rgba(40,40,40,0.9), rgba(30,30,30,0.9))'
+      : 'linear-gradient(145deg, rgba(240,240,240,0.9), rgba(250,250,250,0.9))'
   },
   {
     icon: '🔒',
-    title: 'Secure Storage',
-    details: 'VPN encryption, secure storage design',
-    background: 'linear-gradient(to right bottom, #fff0f6, #f3e5ff)'
+    title: 'Advanced Security',
+    details: 'End-to-end VPN encryption with zero-trust hardware security design',
+    background: isDark.value
+      ? 'linear-gradient(145deg, rgba(40,40,40,0.9), rgba(30,30,30,0.9))'
+      : 'linear-gradient(145deg, rgba(240,240,240,0.9), rgba(250,250,250,0.9))'
   },
   {
     icon: '⚡',
-    title: 'High Performance',
-    details: 'Powered by Intel AI chip, up to 4.5GHz',
-    background: 'linear-gradient(to right bottom, #e3fcf7, #e8fff0)'
-  },
-  // Add more features as needed
+    title: 'Powerful Computing',
+    details: 'Intel AI chip with up to 4.5GHz, supporting OpenVINO/IPEX-LLM AI inference framework',
+    background: isDark.value
+      ? 'linear-gradient(145deg, rgba(40,40,40,0.9), rgba(30,30,30,0.9))'
+      : 'linear-gradient(145deg, rgba(240,240,240,0.9), rgba(250,250,250,0.9))'
+  }
 ]
 </script>
 
@@ -44,13 +52,14 @@ const features = [
   padding: 24px;
   border-radius: 12px;
   transition: all 0.3s;
-  border: none;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .feature-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
 .icon {
@@ -62,13 +71,13 @@ h3 {
   margin: 8px 0;
   font-size: 16px;
   font-weight: 600;
-  color: #000;
+  color: var(--vp-c-text);
 }
 
 p {
   margin: 0;
   font-size: 14px;
-  color: #666;
+  color: var(--vp-c-text-2);
   line-height: 1.6;
 }
 </style> 
